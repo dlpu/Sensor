@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Button android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/exit"
+            android:text="退出"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text"
+            android:text="传感器数据"
+            />
+    <LinearLayout
+            android:id="@+id/ll1"
+            android:orientation="horizontal"
+            android:layout_above="@+id/exit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="2px"
+                android:id="@+id/getA"
+                android:text="加速度"/>
+        <Button android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="2px"
+                android:id="@+id/getMF"
+                android:text="磁场"/>
+        <Button android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="2px"
+                android:id="@+id/getO"
+                android:text="方向"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/ll2"
+            android:orientation="horizontal"
+            android:layout_above="@+id/ll1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <Button android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/getL"
+                android:layout_margin="2px"
+                android:text="光"/>
+        <Button android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/getP"
+                android:layout_margin="2px"
+                android:text="近距离"/>
+        <Button android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="2px"
+                android:id="@+id/getGy"
+                android:text="陀螺仪"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/ll3"
+            android:layout_above="@+id/ll2"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <Button android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="2px"
+                android:id="@+id/getGr"
+                android:text="重力"/>
+        <Button android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/getLA"
+                android:layout_margin="2px"
+                android:text="线性加速度"/>
+        <Button android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="2px"
+                android:id="@+id/getRV"
+                android:text="翻转"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
