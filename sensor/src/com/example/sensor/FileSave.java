@@ -11,39 +11,39 @@ public class FileSave {
 
 		switch (id) {
 		case 0:
-			name = System.currentTimeMillis()+"加速度传感器.txt";
+			name = "加速度传感器.txt";
 			break;
 
 		case 1:
-			name = System.currentTimeMillis()+"磁场传感器.txt";
+			name = "磁场传感器.txt";
 			break;
 
 		case 2:
-			name = System.currentTimeMillis()+"方向传感器.txt";
+			name = "方向传感器.txt";
 			break;
 
 		case 3:
-			name = System.currentTimeMillis()+"光传感器.txt";
+			name = "光传感器.txt";
 			break;
 
 		case 4:
-			name = System.currentTimeMillis()+"距离传感器.txt";
+			name = "距离传感器.txt";
 			break;
 
 		case 5:
-			name = System.currentTimeMillis()+"陀螺仪传感器.txt";
+			name = "陀螺仪传感器.txt";
 			break;
 			
 		case 6:
-			name = System.currentTimeMillis()+"重力传感器.txt";
+			name = "重力传感器.txt";
 			break;
 			
 		case 7:
-			name = System.currentTimeMillis()+"线性加速度传感器.txt";
+			name = "线性加速度传感器.txt";
 			break;
 			
 		case 8:
-			name = System.currentTimeMillis()+"翻转传感器.txt";
+			name = "翻转传感器.txt";
 			break;
 		default:
 			break;

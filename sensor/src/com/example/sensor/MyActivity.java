@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MyActivity extends Activity {
-    
 
     Button getA;
     Button getMF;
@@ -173,43 +172,43 @@ public class MyActivity extends Activity {
             }
         });
 
-		// 陀螺仪传感器
-		getGy.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				  a++;
+        // 陀螺仪传感器
+        getGy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                a++;
                 if(a!=2){
-                     getGy.setBackgroundColor(Color.parseColor("#ffcc00"));
-                     timeString = "id,X,Y,Z,time,flag" + "\r\n";
-				       FileSave.save(timeString, 5);
-				       sensorManager.registerListener(listener,
-					   sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE),
-						SensorManager.SENSOR_DELAY_UI);
-                 }else{
-                     getGy.setBackgroundColor(Color.parseColor("#3E515F"));
-                     a=0;
-                 }
-			}
-		});
+                    getGy.setBackgroundColor(Color.parseColor("#ffcc00"));
+                    timeString = "id,X,Y,Z,time,flag" + "\r\n";
+                    FileSave.save(timeString, 5);
+                    sensorManager.registerListener(listener,
+                            sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE),
+                            SensorManager.SENSOR_DELAY_UI);
+                }else{
+                    getGy.setBackgroundColor(Color.parseColor("#3E515F"));
+                    a=0;
+                }
+            }
+        });
 
-		//重力传感器
-		getGr.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-              a++;
-              if(a != 2){
-              getGr.setBackgroundColor(Color.parseColor("#ffcc00"));
-				timeString = "id,X,Y,Z,time,flag" + "\r\n";
-				FileSave.save(timeString, 6);
-				sensorManager.registerListener(listener,
-						sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY),
-						SensorManager.SENSOR_DELAY_UI);
-              }else{
-                  getGr.setBackgroundColor(Color.parseColor("#3E515F"));
-                  a = 0;
-              }
-			}
-		});
+        //重力传感器
+        getGr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                a++;
+                if(a != 2){
+                    getGr.setBackgroundColor(Color.parseColor("#ffcc00"));
+                    timeString = "id,X,Y,Z,time,flag" + "\r\n";
+                    FileSave.save(timeString, 6);
+                    sensorManager.registerListener(listener,
+                            sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY),
+                            SensorManager.SENSOR_DELAY_UI);
+                }else{
+                    getGr.setBackgroundColor(Color.parseColor("#3E515F"));
+                    a = 0;
+                }
+            }
+        });
 
         //线性加速度传感器
         getLA.setOnClickListener(new View.OnClickListener() {
@@ -280,6 +279,7 @@ public class MyActivity extends Activity {
                     content = id[1] +","+ values[0] + "," + values[1] + ","
                             + values[2]+","+GetTime.getTime()+","+flag+"\r\n";
                     FileSave.save(content, 1);
+                    id[1]++;
                     break;
                 case Sensor.TYPE_ORIENTATION:
                     text.setText("X:" + values[0] + "\nY:" + values[1] + "\nZ:"
@@ -287,45 +287,54 @@ public class MyActivity extends Activity {
                     content = id[2] +","+ values[0] + "," + values[1] + ","
                             + values[2]+","+GetTime.getTime()+","+flag+"\r\n";
                     FileSave.save(content, 2);
+                    id[2]++;
                     break;
                 case Sensor.TYPE_LIGHT:
                     text.setText("亮度:" + values[0]);
                     content = id[3] +","+ values[0]+","+GetTime.getTime()+","+flag+"\r\n";
                     FileSave.save(content, 3);
+                    id[3]++;
                     break;
                 case Sensor.TYPE_PROXIMITY:
                     text.setText("X:" + values[0] + "\nY:" + values[1] + "\nZ:"
                             + values[2]);
-                    content = "X:" + values[0] + "Y:" + values[1] + "Z:"
-                            + values[2] +"\n";
+                    content = id[4] +","+ values[0] + "," + values[1] + ","
+                        + values[2] +","+GetTime.getTime()+","+flag+"\r\n";
                     FileSave.save(content, 4);
+                    id[4]++;
                     break;
-                // case Sensor.TYPE_GYROSCOPE:
-                // text.setText("X:" + values[0]
-                // );
-                // content="X:"+values[0]+"Y:"+values[1]+"Z:"+values[2]+"\n";
-                // FileSave.save(content,5);
-                // break;
-                // case Sensor.TYPE_GRAVITY:
-                // text.setText("X:" + values[0]
-                // + "\nY:" +values[1] + "\nZ:"
-                // + values[2]);
-                // content="X:"+values[0]+"Y:"+values[1]+"Z:"+values[2]+"\n";
-                // FileSave.save(content,6);
-                // break;
+                case Sensor.TYPE_GYROSCOPE:
+                    text.setText("X:" + values[0]
+                    );
+                    content = id[5] +","+ values[0] + "," + values[1] + ","
+                            + values[2] +","+GetTime.getTime()+","+flag+"\r\n";
+                    FileSave.save(content,5);
+                    id[5]++;
+                    break;
+                case Sensor.TYPE_GRAVITY:
+                    text.setText("X:" + values[0]
+                            + "\nY:" +values[1] + "\nZ:"
+                            + values[2]);
+                    content = id[6] +","+ values[0] + "," + values[1] + ","
+                            + values[2] +","+GetTime.getTime()+","+flag+"\r\n";
+                    FileSave.save(content,6);
+                    id[6]++;
+                    break;
                 case Sensor.TYPE_LINEAR_ACCELERATION:
                     text.setText("X:" + values[0] + "\nY:" + values[1] + "\nZ:"
                             + values[2]);
-                    content = "X:" + values[0] + "Y:" + values[1] + "Z:"
-                            + values[2]+"\n";
+                    content = id[7] +","+ values[0] + "," + values[1] + ","
+                            + values[2] +","+GetTime.getTime()+","+flag+"\r\n";
                     FileSave.save(content, 7);
+                    id[7]++;
                     break;
                 case Sensor.TYPE_ROTATION_VECTOR:
                     text.setText("X:" + values[0] + "\nY:" + values[1] + "\nZ:"
                             + values[2]);
-                    content = "X:" + values[0] + "Y:" + values[1] + "Z:"
-                            + values[2]+"\n";
+                    content = id[8] +","+ values[0] + "," + values[1] + ","
+                            + values[2] +","+GetTime.getTime()+","+flag+"\r\n";
                     FileSave.save(content, 8);
+                    id[8]++;
                     break;
                 default:
                     break;
