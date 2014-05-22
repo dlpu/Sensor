@@ -7,43 +7,43 @@ import android.os.Environment;
 public class FileSave {
 	private static String name;
 
-	public static void save(String content, int id) {
+	public static void save(String content, int id ,int num) {
 
 		switch (id) {
 		case 0:
-			name = "加速度传感器.txt";
+			name = "加速度传感器"+num+".txt";
 			break;
 
 		case 1:
-			name = "磁场传感器.txt";
+			name = "磁场传感器"+num+".txt";
 			break;
 
 		case 2:
-			name = "方向传感器.txt";
+			name = "方向传感器"+num+".txt";
 			break;
 
 		case 3:
-			name = "光传感器.txt";
+			name = "光传感器"+num+".txt";
 			break;
 
 		case 4:
-			name = "距离传感器.txt";
+			name = "距离传感器"+num+".txt";
 			break;
 
 		case 5:
-			name = "陀螺仪传感器.txt";
+			name = "陀螺仪传感器"+num+".txt";
 			break;
 			
 		case 6:
-			name = "重力传感器.txt";
+			name = "重力传感器"+num+".txt";
 			break;
 			
 		case 7:
-			name = "线性加速度传感器.txt";
+			name = "线性加速度传感器"+num+".txt";
 			break;
 			
 		case 8:
-			name = "翻转传感器.txt";
+			name = "翻转传感器"+num+".txt";
 			break;
 		default:
 			break;
