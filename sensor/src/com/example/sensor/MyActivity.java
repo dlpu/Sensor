@@ -20,6 +20,7 @@ import java.util.*;
 
 public class MyActivity extends Activity{
 
+ 	Button test;
     Button getA;
     Button getMF;
     Button getO;
