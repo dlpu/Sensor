@@ -6,6 +6,7 @@ import android.os.Environment;
 
 public class FileSave {
 	private static String name;
+	private static String name1;
 
 	public static void save(String content, int id ,int num) {
 
