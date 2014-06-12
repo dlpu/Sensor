@@ -17,8 +17,10 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+
 public class MyActivity extends Activity{
 
+ 	Button test;
     Button getA;
     Button getMF;
     Button getO;
